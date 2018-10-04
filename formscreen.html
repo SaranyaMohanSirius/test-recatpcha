@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<!-- START :: login/forgot-password.html -->
+
+<head>
+  <title>AgView : Forgot Password</title>
+</head>
+
+<body>
+
+    <!--Intro Section Ends-->
+
+    <div class="themeContentBody main-content">
+      <div class="container ">
+
+        <div class="theme-title">
+          Send the password reset link to...<span class="mandatory-mark">*</span>
+        </div>
+
+        <form id="forgotPasswordForm" name="forgotPasswordForm" action="" method="post">
+
+          <div class="row my-2">
+            <div class="col-4">
+              <div class="color-red error-message float-right " id="emailId_err"> </div>
+              <div class="form-group input-group">
+                <span class="has-float-label">
+                <input type="text" id="emailId" class="form-control" placeholder=" " />
+                <label for="emailId">Email Address <span class="mandatory-mark">*</span></label>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--div class="g-recaptcha" data-sitekey="6Le9THMUAAAAADRFf1slelgvkrNvrW8D0HQsITjx"></div-->
+
+          <div class="my-4 row px-2">
+            <div class="col-4 p-0">
+              <!--button class="g-recaptcha btn btn-act btn-act-positive--primary ml-2" data-sitekey="6LeMSnMUAAAAAKjApdi7io4w8yMXEgsLOFp2IA3h" data-callback='onSubmit'>Send link</button-->
+              <button type="submit" class="btn btn-act btn-act-positive--primary ml-2">Send link</button>
+            </div>
+          </div>
+
+        </form>
+        
+           <form action="validatereCaptcha();">
+		      <div id="example1"></div>
+		      <br>
+		      <input type="submit" value="getResponse">
+		   </form>
+
+      </div>
+    </div>
+
+  </div>
+  <script>
+
+      var widgetId1;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        widgetId1 = grecaptcha.render('example1', {
+          'sitekey' : '6Le9THMUAAAAADRFf1slelgvkrNvrW8D0HQsITjx',
+          'theme' : 'dark'
+        });
+      };
+  </script>
+
+<script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
+
+</body>
+
+</html>
